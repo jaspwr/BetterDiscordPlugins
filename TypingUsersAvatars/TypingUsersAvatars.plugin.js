@@ -3,7 +3,7 @@
 * @source https://github.com/QWERTxD/BetterDiscordPlugins/blob/main/TypingUsersAvatars/TypingUsersAvatars.plugin.js
 * @updateUrl https://raw.githubusercontent.com/QWERTxD/BetterDiscordPlugins/main/TypingUsersAvatars/TypingUsersAvatars.plugin.js
 * @website https://github.com/QWERTxD/BetterDiscordPlugins/tree/main/TypingUsersAvatars
-* @version 1.0.6
+* @version 1.0.7
 * @description Shows avatars of typing users.
 */
 
@@ -19,7 +19,7 @@ const config = {
                 name: 'QWERT'
             }
         ],
-        version: '1.0.6',
+        version: '1.0.7',
         description: 'Shows avatars of typing users.',
     },
     changelog: [
@@ -88,17 +88,17 @@ module.exports = !global.ZeresPluginLibrary ? class {
 
         onStart() {
             PluginUtilities.addStyle('TypingUsersAvatars', `
-                .typing-2J1mQU .text-3S7XCz {
+                .typing__6fd1d .text_ca54e9 {
                     margin: 0;
                 }
                 
-                .typing-2J1mQU .wrapper-1VLyxH {
+                .typing__6fd1d .wrapper-1VLyxH {
                     display: flex;
                     margin: 0 4px;
                 }
                 
-                .typing-2J1mQU .text-3S7XCz,
-                .typing-2J1mQU .text-3S7XCz > strong {
+                .typing__6fd1d .text_ca54e9,
+                .typing__6fd1d .text_ca54e9 > strong {
                     display: contents;
                 }
                 
@@ -107,7 +107,7 @@ module.exports = !global.ZeresPluginLibrary ? class {
                     margin-right: 5px;
                 }
                 
-                .several-users .avatarSize-1KpZ5E {
+                .several-users .avatarSize_ce782f {
                     margin: 0;
                 }
 
@@ -172,11 +172,11 @@ module.exports = !global.ZeresPluginLibrary ? class {
             // `showUserPopout` is broken right now.
             // avatar.addEventListener('click', () => Popouts.showUserPopout(document.getElementById(`typing-user-${user.id}`), user), {align: "top"});
 
-            avatar.innerHTML = `<svg width="${avatarSize}" height="${avatarSize}" class="avatarContainerMasked-13fYnN" viewBox="0 0 ${avatarSize} ${avatarSize}">
+            avatar.innerHTML = `<svg width="${avatarSize}" height="${avatarSize}" class="avatarContainerMasked__6a03e" viewBox="0 0 ${avatarSize} ${avatarSize}">
                 <foreignObject x="0" y="0" width="${avatarSize}" height="${avatarSize}" overflow="visible" ${
                     masked ? `mask="url(#svg-mask-voice-user-summary-item)` : ''
                 }">
-                    <img src="${avatarURL}" class="avatar-3TrM7c">
+                    <img src="${avatarURL}" class="avatar__777a6">
                 </foreignObject>
                 <rect width="7" height="7" x="12" y="12" fill="${statusColor}" mask="url(#svg-mask-status-online)"
                 class="pointerEvents-9SZWKj"></rect>
@@ -219,7 +219,7 @@ module.exports = !global.ZeresPluginLibrary ? class {
         }
 
         observer({addedNodes, removedNodes}) {
-            const dotsClass = 'typingDots-1Y8dki';
+            const dotsClass = 'typingDots_d92d42';
             for(const node of addedNodes) {
                 if (Node.TEXT_NODE == node.nodeType) continue;
                 Array.from(node.getElementsByClassName(dotsClass)).forEach((element) => {
